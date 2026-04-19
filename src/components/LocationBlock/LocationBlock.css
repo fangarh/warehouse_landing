@@ -285,3 +285,37 @@
   }
 }
 
+@media (min-width: 1280px) {
+  .location-block__overview {
+    grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+    gap: 1rem;
+  }
+
+  .location-block__details {
+    padding: 1.45rem;
+  }
+
+  .location-block__details h2 {
+    font-size: clamp(2.1rem, 2.65vw, 2.8rem);
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  .location-block__description,
+  .location-block__caption {
+    line-height: 1.58;
+  }
+
+  .location-block__benefits {
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .location-block__map {
+    margin-top: 1rem;
+  }
+
+  .location-block__map iframe {
+    min-height: 360px;
+  }
+}

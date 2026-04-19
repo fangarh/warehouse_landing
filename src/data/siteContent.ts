@@ -24,9 +24,9 @@ export const siteContent: SiteContent = {
   navigation: [
     { id: 'advantages', label: 'Преимущества', href: '#advantages' },
     { id: 'premises', label: 'Помещения', href: '#premises' },
-    { id: 'pricing', label: 'Форматы аренды', href: '#pricing' },
+    { id: 'pricing', label: 'Форматы и цена', href: '#pricing' },
     { id: 'location', label: 'Расположение', href: '#location' },
-    { id: 'contact', label: 'Запрос аренды', href: '#contact' },
+
   ],
   seo: {
     title: 'Аренда склада в Колпино для бизнеса | Складские помещения в Колпино',

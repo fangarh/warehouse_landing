@@ -1,5 +1,5 @@
-﻿.premises-block__heading {
-  max-width: 760px;
+#premises .premises-block__heading {
+  max-width: none;
 }
 
 .premises-block .mobile-swipe-hint {
@@ -328,3 +328,66 @@
     gap: 0.35rem;
   }
 }
+
+@media (min-width: 1280px) {
+  #premises .premises-block__heading {
+    display: block;
+    max-width: none;
+  }
+
+  #premises .premises-block__heading .section-heading__eyebrow {
+    margin-bottom: 0;
+  }
+
+  #premises .premises-block__heading h2 {
+    max-width: 12ch;
+  }
+
+  #premises .premises-block__heading p {
+    max-width: 980px;
+    margin-top: 0.9rem;
+  }
+
+  .premises-block__showcase {
+    grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.72fr);
+    gap: 1.25rem;
+  }
+
+  .premises-block__hero {
+    min-height: 500px;
+  }
+
+  .premises-block__summary,
+  .premises-block__specs {
+    padding: 1.45rem;
+  }
+
+  .premises-block__summary.surface-panel .premises-block__summary-text {
+    line-height: 1.64;
+  }
+
+  .premises-block__summary.surface-panel .premises-block__utility-list {
+    gap: 0.7rem;
+    margin-top: 1.15rem;
+  }
+
+  .premises-block__workflow {
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .premises-block__workflow-card {
+    padding: 1.2rem;
+  }
+
+  .premises-block__support {
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+
+
+
+
+
+

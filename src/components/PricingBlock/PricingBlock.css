@@ -10,8 +10,9 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.pricing-block__heading {
+#pricing .pricing-block__heading {
   margin-bottom: 0;
+  max-width: none;
 }
 
 .pricing-block__billing {
@@ -392,3 +393,48 @@
     white-space: normal;
   }
 }
+
+@media (min-width: 1280px) {
+  .pricing-block__topbar {
+    grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.72fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #pricing .pricing-block__heading {
+    max-width: none;
+  }
+  #pricing .pricing-block__heading h2 {
+    max-width: 18ch;
+  }
+  #pricing .pricing-block__heading p {
+    max-width: 64ch;
+    margin-top: 0.85rem;
+  }
+
+  .pricing-block__billing {
+    padding: 1rem;
+  }
+
+  .pricing-block__billing-hint {
+    line-height: 1.56;
+  }
+
+  .pricing-block__layout {
+    gap: 1rem;
+  }
+
+  .pricing-block__plan {
+    padding: 1.45rem;
+  }
+
+  .pricing-block__description,
+  .pricing-block__features li,
+  .pricing-block__note,
+  .pricing-block__footer-note {
+    line-height: 1.58;
+  }
+}
+
+
+

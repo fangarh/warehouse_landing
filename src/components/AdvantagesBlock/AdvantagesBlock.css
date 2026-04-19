@@ -9,8 +9,8 @@
 }
 
 .advantages-block__item {
-  min-height: 240px;
-  padding: 1.8rem;
+  min-height: 218px;
+  padding: 1.48rem 1.45rem 1.4rem;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -23,25 +23,17 @@
   border-bottom: 0;
 }
 
-.advantages-block__index {
-  display: inline-flex;
-  margin-bottom: 1rem;
-  color: var(--accent-strong);
-  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-  font-size: 0.94rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .advantages-block__item h3 {
   margin: 0;
-  font-size: 1.18rem;
+  font-size: 1.1rem;
+  line-height: 1.28;
 }
 
 .advantages-block__item p {
-  margin: 0.9rem 0 0;
+  margin: 0.78rem 0 0;
   color: var(--muted);
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.62;
 }
 
 @media (max-width: 980px) {
@@ -93,6 +85,7 @@
   .advantages-block__item:nth-child(2n),
   .advantages-block__item:nth-child(3n) {
     min-height: 100%;
+    padding: 1.28rem 1.2rem 1.22rem;
     border-right: 1px solid var(--line);
     border-bottom: 0;
     scroll-snap-align: start;
@@ -103,3 +96,36 @@
     border-right: 0;
   }
 }
+
+@media (min-width: 1280px) {
+  .advantages-block .section-heading {
+    display: block;
+    max-width: none;
+  }
+
+  .advantages-block .section-heading__eyebrow {
+    margin-bottom: 0;
+  }
+
+  .advantages-block .section-heading h2 {
+    max-width: none;
+  }
+
+  .advantages-block .section-heading p {
+    max-width: 64ch;
+    margin-top: 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .advantages-block__item {
+    min-height: 184px;
+    padding: 1.2rem 1.18rem 1.16rem;
+  }
+}
+
+
+
+
+
+

@@ -18,9 +18,8 @@ export function AdvantagesBlock({ content }: AdvantagesBlockProps) {
         <p className="mobile-swipe-hint">Свайпните карточки, чтобы посмотреть все преимущества</p>
 
         <div className="advantages-block__grid surface-panel">
-          {content.items.map((item, index) => (
+          {content.items.map((item) => (
             <article className="advantages-block__item" key={item.id}>
-              <span className="advantages-block__index">0{index + 1}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>
