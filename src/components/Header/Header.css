@@ -3,7 +3,7 @@
   top: 0;
   z-index: 30;
   backdrop-filter: blur(20px);
-  background: rgba(248, 245, 239, 0.72);
+  background: rgba(244, 248, 251, 0.76);
   border-bottom: 1px solid rgba(20, 33, 42, 0.08);
 }
 
@@ -37,8 +37,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, #ffb56e 100%);
-  box-shadow: 0 0 0 10px rgba(217, 104, 47, 0.12);
+  background: linear-gradient(135deg, var(--accent) 0%, #d8e4ec 100%);
+  box-shadow: 0 0 0 10px rgba(109, 149, 176, 0.16);
 }
 
 .site-header__brand-label {
@@ -96,7 +96,7 @@
   justify-content: center;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: rgba(251, 248, 243, 0.9);
+  background: rgba(245, 248, 250, 0.92);
 }
 
 .site-header__toggle span:not(.visually-hidden) {
@@ -124,7 +124,7 @@
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: 24px;
-    background: rgba(251, 248, 243, 0.96);
+    background: rgba(245, 248, 250, 0.96);
     box-shadow: var(--shadow-soft);
   }
 
@@ -164,7 +164,7 @@
   }
 
   .site-header__brand-mark {
-    box-shadow: 0 0 0 8px rgba(217, 104, 47, 0.12);
+    box-shadow: 0 0 0 8px rgba(109, 149, 176, 0.16);
   }
 
   .site-header__brand-label {

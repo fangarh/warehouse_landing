@@ -15,15 +15,15 @@ function buildMapFallback(content: LocationContent): string {
             place-items: center;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            color: #14212a;
-            background: linear-gradient(135deg, #f6efe4 0%, #e0d5c4 100%);
+            color: #12202c;
+            background: linear-gradient(135deg, #e6edf2 0%, #ccd9e2 100%);
           }
           .card {
             width: min(92%, 420px);
             padding: 24px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.88);
-            box-shadow: 0 18px 40px rgba(19, 32, 43, 0.14);
+            background: rgba(245, 248, 250, 0.9);
+            box-shadow: 0 18px 40px rgba(16, 32, 45, 0.16);
           }
           h2 {
             margin: 0;

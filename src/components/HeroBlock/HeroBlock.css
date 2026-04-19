@@ -19,8 +19,8 @@
 
 .hero-block__veil {
   background:
-    linear-gradient(90deg, rgba(13, 20, 27, 0.86) 0%, rgba(13, 20, 27, 0.58) 44%, rgba(13, 20, 27, 0.2) 100%),
-    linear-gradient(180deg, rgba(13, 20, 27, 0.18) 0%, rgba(13, 20, 27, 0.46) 100%);
+    linear-gradient(90deg, rgba(9, 18, 27, 0.88) 0%, rgba(13, 27, 39, 0.62) 44%, rgba(29, 58, 80, 0.22) 100%),
+    linear-gradient(180deg, rgba(30, 58, 79, 0.18) 0%, rgba(9, 18, 27, 0.52) 100%);
 }
 
 .hero-block__inner {
@@ -41,7 +41,7 @@
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 214, 184, 0.92);
+  color: rgba(210, 226, 238, 0.92);
 }
 
 .hero-block h1 {

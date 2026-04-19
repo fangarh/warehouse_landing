@@ -23,7 +23,7 @@
   min-height: 620px;
   padding: 0;
   overflow: hidden;
-  background: #0f1d27;
+  background: #0e1b27;
 }
 
 .premises-block__hero::after {
@@ -31,8 +31,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(12, 21, 29, 0.05) 0%, rgba(12, 21, 29, 0.18) 34%, rgba(12, 21, 29, 0.84) 100%),
-    linear-gradient(90deg, rgba(12, 21, 29, 0.26) 0%, rgba(12, 21, 29, 0) 42%);
+    linear-gradient(180deg, rgba(10, 19, 28, 0.06) 0%, rgba(15, 29, 40, 0.2) 34%, rgba(10, 19, 28, 0.86) 100%),
+    linear-gradient(90deg, rgba(21, 44, 61, 0.3) 0%, rgba(12, 21, 29, 0) 42%);
 }
 
 .premises-block__hero img {
@@ -87,8 +87,8 @@
 .premises-block__summary.surface-panel {
   justify-content: space-between;
   background:
-    linear-gradient(180deg, rgba(19, 32, 43, 0.98) 0%, rgba(31, 49, 62, 0.96) 100%),
-    rgba(19, 32, 43, 0.96);
+    linear-gradient(180deg, rgba(15, 29, 41, 0.98) 0%, rgba(38, 58, 74, 0.96) 100%),
+    rgba(15, 29, 41, 0.96);
   color: #fff;
 }
 
@@ -191,8 +191,8 @@
 .premises-block__plan {
   padding: 1.1rem;
   background:
-    linear-gradient(180deg, rgba(251, 248, 243, 0.96) 0%, rgba(244, 239, 231, 0.94) 100%),
-    rgba(251, 248, 243, 0.94);
+    linear-gradient(180deg, rgba(248, 251, 253, 0.96) 0%, rgba(231, 238, 243, 0.94) 100%),
+    rgba(245, 248, 250, 0.94);
 }
 
 .premises-block__plan-image {
@@ -201,7 +201,7 @@
   height: auto;
   border: 1px solid rgba(25, 41, 54, 0.08);
   border-radius: 22px;
-  background: linear-gradient(180deg, #f8f4ed 0%, #f1eadf 100%);
+  background: linear-gradient(180deg, #f4f8fb 0%, #dde6ec 100%);
   object-fit: contain;
 }
 

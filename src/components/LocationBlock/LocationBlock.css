@@ -56,7 +56,7 @@
   padding: 1rem 1.1rem;
   border: 1px solid rgba(25, 41, 54, 0.1);
   border-radius: 18px;
-  background: rgba(246, 239, 228, 0.62);
+  background: rgba(219, 229, 236, 0.62);
 }
 
 .location-block__address span {
@@ -123,8 +123,8 @@
 .location-block__map-placeholder {
   padding: clamp(1.4rem, 2.8vw, 2.25rem);
   background:
-    radial-gradient(circle at top left, rgba(217, 104, 47, 0.16), transparent 30%),
-    linear-gradient(135deg, rgba(246, 239, 228, 0.98) 0%, rgba(232, 221, 204, 0.94) 100%);
+    radial-gradient(circle at top left, rgba(109, 149, 176, 0.2), transparent 30%),
+    linear-gradient(135deg, rgba(230, 237, 242, 0.98) 0%, rgba(207, 220, 229, 0.94) 100%);
 }
 
 .location-block__map-placeholder-grid {
@@ -139,7 +139,7 @@
 .location-block__map-meta {
   border-radius: 24px;
   border: 1px solid rgba(25, 41, 54, 0.08);
-  background: rgba(251, 248, 243, 0.76);
+  background: rgba(245, 248, 250, 0.8);
   backdrop-filter: blur(10px);
 }
 
@@ -216,7 +216,7 @@
 }
 
 .location-block__map-canvas {
-  background: linear-gradient(135deg, #f6efe4 0%, #e0d5c4 100%);
+  background: linear-gradient(135deg, #e6edf2 0%, #ccd9e2 100%);
 }
 
 .location-block__map-loading {
@@ -227,8 +227,8 @@
   padding: 1.5rem;
   text-align: center;
   font-weight: 700;
-  color: #14212a;
-  background: linear-gradient(135deg, rgba(246, 239, 228, 0.92) 0%, rgba(224, 213, 196, 0.88) 100%);
+  color: var(--ink);
+  background: linear-gradient(135deg, rgba(230, 237, 242, 0.92) 0%, rgba(204, 217, 226, 0.88) 100%);
 }
 
 @media (max-width: 960px) {

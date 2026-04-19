@@ -75,7 +75,7 @@
   min-height: 24px;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: rgba(217, 104, 47, 0.14);
+  background: var(--accent-soft);
   color: var(--accent-strong);
   font-size: 0.78rem;
   line-height: 1;
@@ -83,7 +83,7 @@
 
 .pricing-block__billing-button.is-active .pricing-block__billing-discount {
   background: rgba(255, 255, 255, 0.14);
-  color: #ffcfaa;
+  color: #d7e8f4;
 }
 
 .pricing-block__billing-hint {
@@ -107,7 +107,7 @@
 
 .pricing-block__plan.is-highlighted {
   background:
-    linear-gradient(180deg, rgba(19, 32, 43, 0.96) 0%, rgba(33, 49, 63, 0.96) 100%),
+    linear-gradient(180deg, rgba(15, 29, 41, 0.98) 0%, rgba(38, 58, 74, 0.96) 100%),
     var(--navy);
   color: #fff;
   border-color: rgba(255, 255, 255, 0.08);
@@ -123,7 +123,7 @@
 }
 
 .pricing-block__plan.is-highlighted .pricing-block__audience {
-  color: #ffbc84;
+  color: #c4d9e7;
 }
 
 .pricing-block__plan h3 {
@@ -184,7 +184,7 @@
   margin-top: 0.28rem;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-  background: rgba(217, 104, 47, 0.14);
+  background: var(--accent-soft);
   color: var(--accent-strong);
   font-size: 0.84rem;
   font-weight: 800;
@@ -193,7 +193,7 @@
 
 .pricing-block__plan.is-highlighted .pricing-block__price-discount {
   background: rgba(255, 255, 255, 0.14);
-  color: #ffcfaa;
+  color: #d7e8f4;
 }
 
 .pricing-block__price-meta {
@@ -231,7 +231,7 @@
 
 .pricing-block__plan.is-highlighted .pricing-block__period,
 .pricing-block__plan.is-highlighted .pricing-block__savings {
-  color: #ffcfaa;
+  color: #d7e8f4;
 }
 
 .pricing-block__plan.is-highlighted .pricing-block__compare,

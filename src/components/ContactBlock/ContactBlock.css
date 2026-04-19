@@ -11,7 +11,7 @@
 }
 
 .contact-block__intro {
-  background: linear-gradient(180deg, rgba(20, 33, 42, 0.96) 0%, rgba(36, 55, 69, 0.96) 100%);
+  background: linear-gradient(180deg, rgba(15, 29, 41, 0.98) 0%, rgba(38, 58, 74, 0.96) 100%);
   color: #fff;
 }
 
@@ -83,7 +83,7 @@
   padding: 0.95rem 1rem;
   border: 1px solid rgba(20, 33, 42, 0.16);
   border-radius: 16px;
-  background: rgba(251, 248, 243, 0.9);
+  background: rgba(245, 248, 250, 0.92);
 }
 
 .contact-form__field textarea {
@@ -92,7 +92,7 @@
 
 .contact-form__field small,
 .contact-form__error {
-  color: #ba3f1a;
+  color: #8d4e5d;
 }
 
 .contact-form__consent {
@@ -129,8 +129,8 @@
 }
 
 .contact-form__status.is-error {
-  background: rgba(186, 63, 26, 0.12);
-  color: #9d3317;
+  background: rgba(141, 78, 93, 0.12);
+  color: #7b4451;
 }
 
 .contact-form__status.is-loading {
