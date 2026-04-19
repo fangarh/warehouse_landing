@@ -1,0 +1,105 @@
+.advantages-block .mobile-swipe-hint {
+  display: none;
+}
+
+.advantages-block__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.advantages-block__item {
+  min-height: 240px;
+  padding: 1.8rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.advantages-block__item:nth-child(3n) {
+  border-right: 0;
+}
+
+.advantages-block__item:nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
+.advantages-block__index {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--accent-strong);
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.advantages-block__item h3 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.advantages-block__item p {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+@media (max-width: 980px) {
+  .advantages-block__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .advantages-block__item:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .advantages-block__item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .advantages-block__item:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .advantages-block__item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .advantages-block .mobile-swipe-hint {
+    display: inline-flex;
+  }
+
+  .advantages-block__grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(86%, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.1rem;
+  }
+
+  .advantages-block__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .advantages-block__item,
+  .advantages-block__item:nth-child(2n),
+  .advantages-block__item:nth-child(3n) {
+    min-height: 100%;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .advantages-block__item:last-child {
+    border-right: 0;
+  }
+}

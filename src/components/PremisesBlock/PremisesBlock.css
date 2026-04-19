@@ -1,0 +1,327 @@
+.premises-block__heading {
+  max-width: 760px;
+}
+
+.premises-block .mobile-swipe-hint {
+  display: none;
+}
+
+.premises-block__showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.7fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.premises-block__hero,
+.premises-block__plan {
+  margin: 0;
+}
+
+.premises-block__hero {
+  position: relative;
+  min-height: 620px;
+  padding: 0;
+  overflow: hidden;
+  background: #0f1d27;
+}
+
+.premises-block__hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 21, 29, 0.05) 0%, rgba(12, 21, 29, 0.18) 34%, rgba(12, 21, 29, 0.84) 100%),
+    linear-gradient(90deg, rgba(12, 21, 29, 0.26) 0%, rgba(12, 21, 29, 0) 42%);
+}
+
+.premises-block__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.premises-block__hero-caption {
+  position: absolute;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.premises-block__hero-lead {
+  margin: 0;
+  color: #fff;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.06;
+}
+
+.premises-block__hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.premises-block__hero-highlights li {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-weight: 700;
+}
+
+.premises-block__summary,
+.premises-block__specs {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.premises-block__summary.surface-panel {
+  justify-content: space-between;
+  background:
+    linear-gradient(180deg, rgba(19, 32, 43, 0.98) 0%, rgba(31, 49, 62, 0.96) 100%),
+    rgba(19, 32, 43, 0.96);
+  color: #fff;
+}
+
+.premises-block__summary-kicker {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.premises-block__summary.surface-panel .premises-block__summary-kicker {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.premises-block__summary.surface-panel h3,
+.premises-block__workflow-card h3,
+.premises-block__specs h3 {
+  margin: 0.85rem 0 0;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.premises-block__summary.surface-panel .premises-block__summary-text {
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.72;
+}
+
+.premises-block__summary.surface-panel .premises-block__utility-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.premises-block__summary.surface-panel .premises-block__utility-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.premises-block__summary.surface-panel .premises-block__utility-list li::before {
+  content: '';
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.premises-block__summary.surface-panel .premises-block__summary-cta {
+  margin-top: 1.75rem;
+  width: fit-content;
+}
+
+.premises-block__workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.premises-block__workflow-card {
+  padding: 1.35rem;
+  min-height: 100%;
+}
+
+.premises-block__workflow-label {
+  display: inline-flex;
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.premises-block__workflow-card p,
+.premises-block__plan figcaption,
+.premises-block__spec-row dt {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.premises-block__support {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.premises-block__plan {
+  padding: 1rem;
+}
+
+.premises-block__plan img {
+  width: 100%;
+  min-height: 360px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.premises-block__specs dl {
+  margin: 1.4rem 0 0;
+}
+
+.premises-block__spec-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.premises-block__spec-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.premises-block__spec-row dd {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+@media (max-width: 1180px) {
+  .premises-block__workflow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .premises-block .mobile-swipe-hint {
+    display: inline-flex;
+  }
+
+  .premises-block__showcase,
+  .premises-block__support,
+  .premises-block__workflow {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .premises-block__showcase,
+  .premises-block__support {
+    grid-auto-columns: minmax(92%, 1fr);
+    gap: 0.9rem;
+  }
+
+  .premises-block__workflow {
+    grid-auto-columns: minmax(82%, 1fr);
+    gap: 0.9rem;
+  }
+
+  .premises-block__showcase::-webkit-scrollbar,
+  .premises-block__support::-webkit-scrollbar,
+  .premises-block__workflow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .premises-block__hero,
+  .premises-block__summary.surface-panel,
+  .premises-block__plan,
+  .premises-block__specs,
+  .premises-block__workflow-card {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .premises-block__hero {
+    min-height: 480px;
+  }
+
+  .premises-block__summary.surface-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .premises-block__hero {
+    min-height: 380px;
+  }
+
+  .premises-block__hero-caption {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .premises-block__hero-lead {
+    font-size: clamp(1.25rem, 6vw, 1.7rem);
+  }
+
+  .premises-block__hero-highlights {
+    gap: 0.55rem;
+  }
+
+  .premises-block__hero-highlights li {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .premises-block__summary,
+  .premises-block__specs,
+  .premises-block__workflow-card {
+    padding: 1.2rem;
+  }
+
+  .premises-block__summary.surface-panel .premises-block__summary-cta {
+    width: 100%;
+  }
+
+  .premises-block__spec-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .premises-block__plan img {
+    min-height: 260px;
+  }
+}
