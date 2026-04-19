@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import './HeroBlock.css';
 import { appConfig } from '../../app/config';
 import type { HeroContent } from '../../types/content';
@@ -12,6 +12,14 @@ type HeroBlockProps = {
 export function HeroBlock({ content }: HeroBlockProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [sequenceUnlocked, setSequenceUnlocked] = useState(false);
+  const canAnimateSequence =
+    appConfig.features.enableHeroSequence &&
+    content.media.mode === 'fade-sequence' &&
+    content.media.items.length > 1 &&
+    !reducedMotion;
+  const previewItems = canAnimateSequence && sequenceUnlocked ? content.media.items : content.media.items.slice(0, 1);
+  const previewActiveIndex = canAnimateSequence && sequenceUnlocked ? activeIndex : 0;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -26,20 +34,32 @@ export function HeroBlock({ content }: HeroBlockProps) {
   }, []);
 
   useEffect(() => {
-    content.media.items.slice(1).forEach((item) => {
-      const image = new Image();
-      image.src = item.src;
-    });
-  }, [content.media.items]);
+    if (!canAnimateSequence) {
+      setSequenceUnlocked(false);
+      return;
+    }
+
+    if (sequenceUnlocked) {
+      return;
+    }
+
+    const unlockSequence = () => {
+      setSequenceUnlocked(true);
+    };
+
+    window.addEventListener('pointerdown', unlockSequence, { once: true, passive: true });
+    window.addEventListener('keydown', unlockSequence, { once: true });
+    window.addEventListener('scroll', unlockSequence, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener('pointerdown', unlockSequence);
+      window.removeEventListener('keydown', unlockSequence);
+      window.removeEventListener('scroll', unlockSequence);
+    };
+  }, [canAnimateSequence, sequenceUnlocked]);
 
   useEffect(() => {
-    const shouldAnimate =
-      appConfig.features.enableHeroSequence &&
-      content.media.mode === 'fade-sequence' &&
-      content.media.items.length > 1 &&
-      !reducedMotion;
-
-    if (!shouldAnimate) {
+    if (!(canAnimateSequence && sequenceUnlocked)) {
       setActiveIndex(0);
       return;
     }
@@ -51,18 +71,18 @@ export function HeroBlock({ content }: HeroBlockProps) {
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [content.media, reducedMotion]);
+  }, [canAnimateSequence, content.media.items.length, content.media.transition?.intervalMs, sequenceUnlocked]);
 
   return (
     <section className="hero-block" id="top">
       <div className="hero-block__media" aria-hidden="true">
         <MediaPreview
-          activeIndex={activeIndex}
+          activeIndex={previewActiveIndex}
           className="hero-block__preview"
-          items={content.media.items}
+          items={previewItems}
           priorityFirst
           transitionMs={content.media.transition?.durationMs}
-          zoomActive={Boolean(content.media.transition?.enableZoom && !reducedMotion)}
+          zoomActive={Boolean(content.media.transition?.enableZoom && canAnimateSequence && sequenceUnlocked)}
         />
       </div>
       <div className="hero-block__veil" />

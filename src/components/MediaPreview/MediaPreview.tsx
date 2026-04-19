@@ -36,8 +36,12 @@ export function MediaPreview({
             className={`media-preview__image${isActive ? ' is-active' : ''}${zoomActive && isActive ? ' is-zoomed' : ''}`}
             decoding="async"
             fetchPriority={priorityFirst && index === 0 ? 'high' : 'auto'}
+            height={item.height}
             loading={priorityFirst && index === 0 ? 'eager' : 'lazy'}
+            sizes={item.sizes}
             src={item.src}
+            srcSet={item.srcSet}
+            width={item.width}
           />
         );
       })}

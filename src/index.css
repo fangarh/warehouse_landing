@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
-
-:root {
+﻿:root {
   --header-height: 88px;
   --page-max-width: 1240px;
   --section-space: clamp(4.5rem, 8vw, 7.5rem);

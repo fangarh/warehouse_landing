@@ -1,7 +1,7 @@
-export const imagePrompts = {
+﻿export const imagePrompts = {
   hero: {
     id: 'hero',
-    assetTarget: '/assets/images/warehouse-exterior.png',
+    assetTarget: '/assets/images/warehouse-exterior-1536.jpg',
     prompt:
       'Modern warehouse exterior in Kolpino for business rental, neat loading docks, clean paved access, restrained industrial real estate mood, realistic daylight photography, no logos, no text overlays, commercial but believable scale.',
     replacementNote:
@@ -9,7 +9,7 @@ export const imagePrompts = {
   },
   interior: {
     id: 'interior',
-    assetTarget: '/assets/images/warehouse-interior.png',
+    assetTarget: '/assets/images/warehouse-interior-1536.jpg',
     prompt:
       'Clean warehouse interior for small and medium business, open storage area, bright industrial lighting, neutral palette, realistic commercial photography, suitable for goods, packaging and operational materials, no people, no branding.',
     replacementNote:
@@ -17,7 +17,7 @@ export const imagePrompts = {
   },
   floorPlan: {
     id: 'floor-plan',
-    assetTarget: '/assets/images/warehouse-floor-plan.png',
+    assetTarget: '/assets/images/warehouse-floor-plan-1536.jpg',
     prompt:
       'Presentation-ready floor plan of a business warehouse in Kolpino, clear storage zone, gates, maneuvering area, office and utility part, clean labels, realistic planning logic, restrained architectural style.',
     replacementNote:
@@ -25,7 +25,7 @@ export const imagePrompts = {
   },
   location: {
     id: 'location',
-    assetTarget: '/assets/images/warehouse-location-road.png',
+    assetTarget: '/assets/images/warehouse-location-road-1536.jpg',
     prompt:
       'Logistics-oriented road view near a warehouse in Kolpino, visible access road, commercial real estate surroundings, clean urban-industrial context, realistic daylight, suitable for a location block on a warehouse rental website.',
     replacementNote:

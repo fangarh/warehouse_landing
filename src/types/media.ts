@@ -1,7 +1,9 @@
-export type MediaAsset = {
+﻿export type MediaAsset = {
   id: string;
   type: 'image';
   src: string;
+  srcSet?: string;
+  sizes?: string;
   mobileSrc?: string;
   alt: string;
   width?: number;

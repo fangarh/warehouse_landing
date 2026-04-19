@@ -1,4 +1,4 @@
-.premises-block__heading {
+﻿.premises-block__heading {
   max-width: 760px;
 }
 
@@ -189,14 +189,20 @@
 }
 
 .premises-block__plan {
-  padding: 1rem;
+  padding: 1.1rem;
+  background:
+    linear-gradient(180deg, rgba(251, 248, 243, 0.96) 0%, rgba(244, 239, 231, 0.94) 100%),
+    rgba(251, 248, 243, 0.94);
 }
 
-.premises-block__plan img {
+.premises-block__plan-image {
+  display: block;
   width: 100%;
-  min-height: 360px;
+  height: auto;
+  border: 1px solid rgba(25, 41, 54, 0.08);
   border-radius: 22px;
-  object-fit: cover;
+  background: linear-gradient(180deg, #f8f4ed 0%, #f1eadf 100%);
+  object-fit: contain;
 }
 
 .premises-block__specs dl {
@@ -308,7 +314,8 @@
 
   .premises-block__summary,
   .premises-block__specs,
-  .premises-block__workflow-card {
+  .premises-block__workflow-card,
+  .premises-block__plan {
     padding: 1.2rem;
   }
 
@@ -319,9 +326,5 @@
   .premises-block__spec-row {
     grid-template-columns: 1fr;
     gap: 0.35rem;
-  }
-
-  .premises-block__plan img {
-    min-height: 260px;
   }
 }

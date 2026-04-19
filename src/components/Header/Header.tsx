@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import './Header.css';
 import type { NavigationLink, SectionCta } from '../../types/content';
 import { handleAnchorNavigation } from '../../utils/scroll';
@@ -22,7 +22,10 @@ export function Header({ brandName, navigation, primaryCta }: HeaderProps) {
       <div className="container site-header__inner">
         <button className="site-header__brand" type="button" onClick={handleBrandClick}>
           <span aria-hidden="true" className="site-header__brand-mark" />
-          <span className="site-header__brand-label">{brandName}</span>
+          <span className="site-header__brand-copy">
+            <span className="site-header__brand-label">{brandName}</span>
+            <span className="site-header__brand-tagline">Последняя миля - наша зона ответственности</span>
+          </span>
         </button>
 
         <button

@@ -1,7 +1,26 @@
 import type { SiteContent } from '../types/content';
+import type { MediaAsset } from '../types/media';
+
+const RUNTIME_IMAGE_WIDTH = 1536;
+const RUNTIME_IMAGE_HEIGHT = 1024;
+
+function createResponsiveImage(id: string, name: string, alt: string, sizes: string): MediaAsset {
+  const basePath = `/assets/images/${name}`;
+
+  return {
+    id,
+    type: 'image',
+    src: `${basePath}-1536.jpg`,
+    srcSet: `${basePath}-768.jpg 768w, ${basePath}-1536.jpg 1536w`,
+    sizes,
+    width: RUNTIME_IMAGE_WIDTH,
+    height: RUNTIME_IMAGE_HEIGHT,
+    alt,
+  };
+}
 
 export const siteContent: SiteContent = {
-  brandName: 'Склады для Вас',
+  brandName: 'Форт ЮГ',
   navigation: [
     { id: 'advantages', label: 'Преимущества', href: '#advantages' },
     { id: 'premises', label: 'Помещения', href: '#premises' },
@@ -16,16 +35,16 @@ export const siteContent: SiteContent = {
     ogTitle: 'Аренда склада в Колпино для бизнеса',
     ogDescription:
       'Фото объекта, схема помещения, карта проезда и ориентиры по стоимости аренды склада в Колпино для бизнеса.',
-    ogImage: '/assets/images/warehouse-exterior.png',
+    ogImage: '/assets/images/warehouse-exterior-1536.jpg',
   },
   hero: {
     eyebrow: 'Аренда склада в Колпино',
-    title: 'Складские помещения в Колпино для товара, упаковки и ежедневной работы бизнеса',
+    title: 'Складские помещения в Колпино для ежедневной работы бизнеса',
     subtitle:
       'Подходит компаниям, которым нужен рабочий склад без лишней площади: хранить товарный запас, держать расходные материалы, собирать заказы и оперативно отгружать по Колпино и Санкт-Петербургу.',
     badges: ['Колпино, Санкт-Петербург', 'Под товар и материалы', 'Заезд и разгрузка', 'Просмотр по договоренности'],
     summary:
-      'Формат особенно удобен для интернет-магазинов, сервисных компаний, подрядчиков, дистрибьюторов и локального бизнеса, которому нужен склад рядом с ежедневной логистикой.',
+      'Формат особенно удобен для интернет-магазинов, сервисных компаний, подрядчиков, дистрибьюторов и локального бизнеса, которому нужен склад рядом с КАД.',
     primaryCta: {
       id: 'hero-primary',
       label: 'Запросить условия аренды',
@@ -41,24 +60,24 @@ export const siteContent: SiteContent = {
     media: {
       mode: 'fade-sequence',
       items: [
-        {
-          id: 'hero-1',
-          type: 'image',
-          src: '/assets/images/warehouse-exterior.png',
-          alt: 'Складское здание в Колпино с воротами для погрузки и разгрузки',
-        },
-        {
-          id: 'hero-2',
-          type: 'image',
-          src: '/assets/images/warehouse-storage-corridor.png',
-          alt: 'Складские секции и отдельные зоны хранения для бизнеса',
-        },
-        {
-          id: 'hero-3',
-          type: 'image',
-          src: '/assets/images/warehouse-interior.png',
-          alt: 'Внутреннее пространство складского помещения в аренду в Колпино',
-        },
+        createResponsiveImage(
+          'hero-1',
+          'warehouse-exterior',
+          'Складское здание в Колпино с воротами для погрузки и разгрузки',
+          '100vw',
+        ),
+        createResponsiveImage(
+          'hero-2',
+          'warehouse-storage-corridor',
+          'Складские секции и отдельные зоны хранения для бизнеса',
+          '100vw',
+        ),
+        createResponsiveImage(
+          'hero-3',
+          'warehouse-interior',
+          'Внутреннее пространство складского помещения в аренду в Колпино',
+          '100vw',
+        ),
       ],
       transition: {
         intervalMs: 6500,
@@ -70,7 +89,7 @@ export const siteContent: SiteContent = {
   advantages: {
     title: 'Почему сервисным компаниям удобно работать с этим складом',
     intro:
-      'Если компания занимается монтажом, выездным сервисом, обслуживанием объектов или поставками расходников, склад в Колпино закрывает простую задачу: держать запас рядом с бригадой, быстро загружать машины и не превращать офис в склад.',
+      'Реальная доступность прямых съездов с магистрали, развитая инфраструктура и удобное расположение позволяют экономить время и деньги на логистике.',
     items: [
       {
         id: 'audience-fit',
@@ -111,21 +130,21 @@ export const siteContent: SiteContent = {
     ],
   },
   premises: {
-    title: 'Что сервисной компании важно увидеть по складу заранее',
+    title: 'Преимущества нашего склада',
     intro:
       'По фото и схеме видно главное для сервисной работы: где хранить инструмент и расходники, как загружать машины, как разделять товарные группы и насколько удобно пользоваться помещением каждый день.',
-    mainImage: {
-      id: 'premises-main',
-      type: 'image',
-      src: '/assets/images/warehouse-interior.png',
-      alt: 'Внутреннее пространство складского помещения с зоной ворот и открытой площадью',
-    },
-    floorPlanImage: {
-      id: 'premises-plan',
-      type: 'image',
-      src: '/assets/images/warehouse-floor-plan.png',
-      alt: 'Схема складского помещения с воротами, маневровой зоной и офисно-бытовой частью',
-    },
+    mainImage: createResponsiveImage(
+      'premises-main',
+      'warehouse-interior',
+      'Внутреннее пространство складского помещения с зоной ворот и открытой площадью',
+      '(max-width: 960px) 100vw, 58vw',
+    ),
+    floorPlanImage: createResponsiveImage(
+      'premises-plan',
+      'warehouse-floor-plan',
+      'Схема складского помещения с воротами, маневровой зоной и офисно-бытовой частью',
+      '(max-width: 960px) 100vw, 48vw',
+    ),
     specs: [
       {
         id: 'format',
@@ -165,12 +184,12 @@ export const siteContent: SiteContent = {
         title: 'Подъезд и загрузка автомобилей',
         description:
           'По фасаду и площадке видно, насколько удобно загружать сервисные и грузовые машины, быстро забирать комплект на объект и возвращаться за пополнением без лишней суеты.',
-        media: {
-          id: 'story-image-1',
-          type: 'image',
-          src: '/assets/images/warehouse-exterior.png',
-          alt: 'Фасад складского здания в Колпино с площадкой для грузового транспорта',
-        },
+        media: createResponsiveImage(
+          'story-image-1',
+          'warehouse-exterior',
+          'Фасад складского здания в Колпино с площадкой для грузового транспорта',
+          '(max-width: 960px) 100vw, 40vw',
+        ),
         highlights: ['Подъезд к складу', 'Загрузка машин', 'Рабочий ритм без задержек'],
       },
       {
@@ -179,12 +198,12 @@ export const siteContent: SiteContent = {
         title: 'Секции под запчасти, расходники и оборудование',
         description:
           'Секции позволяют держать отдельно инструмент, расходники, клиентские комплекты и запас под разные объекты, чтобы бригада быстро находила нужное и не тратила время на пересортировку.',
-        media: {
-          id: 'story-image-2',
-          type: 'image',
-          src: '/assets/images/warehouse-storage-corridor.png',
-          alt: 'Складские боксы и секции хранения для бизнес-задач',
-        },
+        media: createResponsiveImage(
+          'story-image-2',
+          'warehouse-storage-corridor',
+          'Складские боксы и секции хранения для бизнес-задач',
+          '(max-width: 960px) 100vw, 40vw',
+        ),
         highlights: ['Разделение по категориям', 'Быстрый доступ', 'Порядок для бригады'],
       },
       {
@@ -193,12 +212,12 @@ export const siteContent: SiteContent = {
         title: 'Внутренняя зона под сборку и подготовку выездов',
         description:
           'Внутри достаточно пространства, чтобы хранить запас, собирать комплекты на объект, принимать поставки и держать повседневную операционку без хаоса.',
-        media: {
-          id: 'story-image-3',
-          type: 'image',
-          src: '/assets/images/warehouse-interior.png',
-          alt: 'Открытое внутреннее пространство склада в аренду',
-        },
+        media: createResponsiveImage(
+          'story-image-3',
+          'warehouse-interior',
+          'Открытое внутреннее пространство склада в аренду',
+          '(max-width: 960px) 100vw, 40vw',
+        ),
         highlights: ['Сборка комплектов', 'Хранение запаса', 'Ежедневная работа без хаоса'],
       },
       {
@@ -207,12 +226,12 @@ export const siteContent: SiteContent = {
         title: 'Планировка под сервисный сценарий',
         description:
           'По схеме проще заранее обсудить, где разместить инструмент, где держать расходники, как построить маршрут погрузки и сколько места нужно под каждое направление работы.',
-        media: {
-          id: 'story-image-4',
-          type: 'image',
-          src: '/assets/images/warehouse-floor-plan.png',
-          alt: 'План складского помещения в Колпино с маневровой зоной и воротами',
-        },
+        media: createResponsiveImage(
+          'story-image-4',
+          'warehouse-floor-plan',
+          'План складского помещения в Колпино с маневровой зоной и воротами',
+          '(max-width: 960px) 100vw, 40vw',
+        ),
         highlights: ['Зоны хранения', 'Маршрут загрузки', 'Понятный разговор по задаче'],
       },
     ],
@@ -314,24 +333,24 @@ export const siteContent: SiteContent = {
     title: 'Расположение, удобное для сервисных маршрутов',
     description:
       'Колпино удобно, если команда работает по югу Петербурга, ближайшим промзонам и самим колпинским объектам. Склад в этой точке помогает быстрее пополнять запас и не гонять машины через весь город.',
-    addressLabel: 'Колпино, Санкт-Петербург',
+    addressLabel: 'поселок Тельмана, промзона, дом 60С',
     coordinates: {
-      lat: 59.748564,
-      lng: 30.595657,
+      lat: 59.719898,
+      lng: 30.6084,
     },
     mapEmbedUrl:
-      'https://yandex.ru/map-widget/v1/?ll=30.595657%2C59.748564&mode=whatshere&whatshere%5Bpoint%5D=30.595657%2C59.748564&whatshere%5Bzoom%5D=14&z=14&lang=ru_RU',
+      'https://yandex.ru/map-widget/v1/?ll=30.608400%2C59.719898&mode=whatshere&whatshere%5Bpoint%5D=30.608400%2C59.719898&whatshere%5Bzoom%5D=18&z=18&lang=ru_RU',
     benefits: [
       'Удобно забирать комплект на маршрут с утра',
       'Проще пополнять запас между выездами в течение дня',
       'Подходит для регулярного движения сервисных и грузовых машин',
     ],
-    previewImage: {
-      id: 'location-road',
-      type: 'image',
-      src: '/assets/images/warehouse-location-road.png',
-      alt: 'Подъездная дорога и логистическая привязка склада в Колпино',
-    },
+    previewImage: createResponsiveImage(
+      'location-road',
+      'warehouse-location-road',
+      'Подъездная дорога и логистическая привязка склада в Колпино',
+      '(max-width: 960px) 100vw, 46vw',
+    ),
     previewCaption:
       'Подъезд к объекту и логистическая привязка по Колпино удобны для сервисных машин, регулярного пополнения запаса и коротких маршрутов по югу города.',
   },

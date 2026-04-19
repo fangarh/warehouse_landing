@@ -1,4 +1,4 @@
-import './PremisesBlock.css';
+﻿import './PremisesBlock.css';
 import { appConfig } from '../../app/config';
 import type { ScrollMediaStoryContent, SiteContent } from '../../types/content';
 import { handleAnchorNavigation } from '../../utils/scroll';
@@ -28,7 +28,16 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
 
         <div className="premises-block__showcase">
           <figure className="premises-block__hero surface-panel">
-            <img alt={premises.mainImage.alt} loading="lazy" src={premises.mainImage.src} />
+            <img
+              alt={premises.mainImage.alt}
+              decoding="async"
+              height={premises.mainImage.height}
+              loading="lazy"
+              sizes={premises.mainImage.sizes}
+              src={premises.mainImage.src}
+              srcSet={premises.mainImage.srcSet}
+              width={premises.mainImage.width}
+            />
             <figcaption className="premises-block__hero-caption">
               <p className="premises-block__hero-lead">
                 Склад под сервис, монтаж и выездные работы, где запас, загрузка и подготовка бригад собраны в одной точке.
@@ -82,7 +91,17 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
 
         <div className="premises-block__support">
           <figure className="premises-block__plan surface-panel">
-            <img alt={premises.floorPlanImage.alt} loading="lazy" src={premises.floorPlanImage.src} />
+            <img
+              className="premises-block__plan-image"
+              alt={premises.floorPlanImage.alt}
+              decoding="async"
+              height={premises.floorPlanImage.height}
+              loading="lazy"
+              sizes={premises.floorPlanImage.sizes}
+              src={premises.floorPlanImage.src}
+              srcSet={premises.floorPlanImage.srcSet}
+              width={premises.floorPlanImage.width}
+            />
             <figcaption>
               Планировка помогает заранее обсудить зоны хранения, путь загрузки и место под подготовку выездов без длинных
               согласований на просмотре.
@@ -90,7 +109,7 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
           </figure>
 
           <div className="premises-block__specs surface-panel">
-            <p className="premises-block__summary-kicker">Что важно согласовать сразу</p>
+            <p className="premises-block__summary-kicker">Для бизнеса</p>
             <h3>Ключевые параметры склада</h3>
             <dl>
               {premises.specs.map((spec) => (
