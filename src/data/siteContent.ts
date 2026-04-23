@@ -37,7 +37,7 @@ function createHeroVideo(id: string, alt: string): MediaAsset {
 }
 
 export const siteContent: SiteContent = {
-  brandName: 'Форт ЮГ',
+  brandName: 'Склад в промпарке «Софийский»',
   navigation: [
     { id: 'advantages', label: 'Локация', href: '#advantages' },
     { id: 'premises', label: 'Объект', href: '#premises' },
