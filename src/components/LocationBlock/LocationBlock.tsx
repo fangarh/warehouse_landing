@@ -62,7 +62,7 @@ type LocationBlockProps = {
 export function LocationBlock({ content }: LocationBlockProps) {
   const previewCaption =
     content.previewCaption ??
-    'Подъезд к объекту и логистическая привязка по Колпино удобны для сервисных машин, регулярного пополнения запаса и коротких маршрутов по югу города.';
+    'Подъезд к объекту в промышленном парке «Софийский» удобен для сервисных машин, регулярного пополнения запаса и коротких маршрутов по Санкт-Петербургу.';
 
   return (
     <section className="location-block section-shell" id="location">

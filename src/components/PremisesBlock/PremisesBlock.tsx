@@ -1,4 +1,4 @@
-﻿import './PremisesBlock.css';
+import './PremisesBlock.css';
 import { appConfig } from '../../app/config';
 import type { ScrollMediaStoryContent, SiteContent } from '../../types/content';
 import { handleAnchorNavigation } from '../../utils/scroll';
@@ -19,12 +19,12 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
     <section className="premises-block section-shell" id="premises">
       <div className="container">
         <div className="section-heading premises-block__heading">
-          <span className="section-heading__eyebrow">Объект и формат</span>
+          <span className="section-heading__eyebrow">Объект для бизнеса</span>
           <h2>{premises.title}</h2>
           <p>{premises.intro}</p>
         </div>
 
-        <p className="mobile-swipe-hint">Свайпните по панелям, чтобы посмотреть фото, сценарии и параметры склада</p>
+        <p className="mobile-swipe-hint">Свайпните по панелям, чтобы посмотреть площади, схему и варианты размещения</p>
 
         <div className="premises-block__showcase">
           <figure className="premises-block__hero surface-panel">
@@ -40,7 +40,7 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
             />
             <figcaption className="premises-block__hero-caption">
               <p className="premises-block__hero-lead">
-                Склад под сервис, монтаж и выездные работы, где запас, загрузка и подготовка бригад собраны в одной точке.
+                Комплекс, в котором можно быстро запустить склад, производство или логистическую базу в одной локации.
               </p>
               {visualHighlights.length > 0 ? (
                 <ul className="premises-block__hero-highlights">
@@ -53,18 +53,18 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
           </figure>
 
           <aside className="premises-block__summary surface-panel">
-            <p className="premises-block__summary-kicker">Склад под рабочий ритм сервиса</p>
-            <h3>Одна база для инструмента, расходников, запчастей и ежедневной загрузки машин</h3>
+            <p className="premises-block__summary-kicker">Гибкая аренда без лишних метров</p>
+            <h3>Выбирайте формат под задачу, а не под ограничения типового склада</h3>
             <p className="premises-block__summary-text">
-              Блок собран не как каталог помещения, а как понятный сервисный сценарий: где хранится запас, как комплектуется выезд,
-              как пополняются расходники и насколько быстро бригада стартует на объект.
+              Можно зайти с частью площади, арендовать отдельный корпус или собрать связку из помещений и открытой площадки.
+              Это удобно, когда бизнесу нужен не абстрактный метраж, а рабочая конфигурация под реальные процессы.
             </p>
 
             <ul className="premises-block__utility-list">
-              <li>Комплектация бригад перед выездом на объект</li>
-              <li>Хранение инструмента, расходников, крепежа и запчастей</li>
-              <li>Пополнение запаса между заявками без хаоса в офисе</li>
-              <li>Ежедневная загрузка сервисных и грузовых машин</li>
+              <li>Отдельные здания для самостоятельного запуска площадки</li>
+              <li>Часть корпуса под склад, производство, сборку или запас</li>
+              <li>Мини-склады и небольшие площади для быстрого старта</li>
+              <li>Открытые площадки 5 500 м² под технику, хранение и маневровые задачи</li>
             </ul>
 
             <a
@@ -72,7 +72,7 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
               href="#contact"
               onClick={(event) => handleAnchorNavigation(event, '#contact')}
             >
-              Запросить просмотр склада
+              Подобрать формат и согласовать просмотр
             </a>
           </aside>
         </div>
@@ -103,14 +103,15 @@ export function PremisesBlock({ premises, story }: PremisesBlockProps) {
               width={premises.floorPlanImage.width}
             />
             <figcaption>
-              Планировка помогает заранее обсудить зоны хранения, путь загрузки и место под подготовку выездов без длинных
-              согласований на просмотре.
+              Схема помогает быстро обсудить размещение, подъезды и распределение площадей под вашу задачу. Текущая
+              визуализация показывает посадку объекта; финальные цвета могут незначительно отличаться, для здания 1
+              предусмотрена синяя кровля.
             </figcaption>
           </figure>
 
           <div className="premises-block__specs surface-panel">
-            <p className="premises-block__summary-kicker">Для бизнеса</p>
-            <h3>Ключевые параметры склада</h3>
+            <p className="premises-block__summary-kicker">Что получает арендатор</p>
+            <h3>Параметры, на которые можно опираться при подборе</h3>
             <dl>
               {premises.specs.map((spec) => (
                 <div className="premises-block__spec-row" key={spec.id}>

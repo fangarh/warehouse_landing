@@ -89,7 +89,7 @@ export function ContactBlock({ content }: ContactBlockProps) {
     <section className="contact-block section-shell" id="contact">
       <div className="container contact-block__layout surface-panel">
         <div className="contact-block__intro">
-          <span className="section-heading__eyebrow">Запрос аренды</span>
+          <span className="section-heading__eyebrow">Получить предложение</span>
           <h2>{content.title}</h2>
           <p>{content.description}</p>
 
@@ -107,8 +107,8 @@ export function ContactBlock({ content }: ContactBlockProps) {
 
           {directContacts.length === 0 && messengers.length === 0 ? (
             <p className="contact-block__contact-note">
-              Самый быстрый способ получить условия аренды сейчас - оставить заявку через форму. В ответ уточним детали и
-              предложим время просмотра.
+              Самый быстрый способ получить доступные варианты и условия аренды сейчас - оставить заявку через форму.
+              В ответ уточним детали, предложим подходящий формат и согласуем просмотр объекта.
             </p>
           ) : null}
         </div>
@@ -140,10 +140,10 @@ export function ContactBlock({ content }: ContactBlockProps) {
           </label>
 
           <label className="contact-form__field">
-            <span>Задача по складу</span>
+            <span>Что нужно разместить</span>
             <textarea
               name="comment"
-              placeholder="Например: нужен склад под товарный запас интернет-магазина, упаковку и ежедневную отгрузку"
+              placeholder="Например: нужен корпус целиком под склад и отгрузку, либо 500-800 м² внутри комплекса и открытая площадка под технику"
               rows={5}
               value={formState.comment}
               onChange={handleTextChange}
@@ -157,7 +157,7 @@ export function ContactBlock({ content }: ContactBlockProps) {
           {errors.consent ? <small className="contact-form__error">{errors.consent}</small> : null}
 
           <button className="button-link button-link--primary contact-form__submit" disabled={status === 'loading'} type="submit">
-            {status === 'loading' ? 'Отправляем запрос...' : content.submitLabel}
+            {status === 'loading' ? 'Готовим предложение...' : content.submitLabel}
           </button>
 
           {status !== 'idle' && statusMessage ? (

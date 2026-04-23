@@ -1,4 +1,4 @@
-﻿.media-preview {
+.media-preview {
   position: relative;
   width: 100%;
   height: 100%;
@@ -6,7 +6,8 @@
   border-radius: inherit;
 }
 
-.media-preview__image {
+.media-preview__image,
+.media-preview__video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -19,10 +20,16 @@
     transform 1.8s ease;
 }
 
-.media-preview__image.is-active {
+.media-preview__image.is-active,
+.media-preview__video.is-active {
   opacity: 1;
 }
 
-.media-preview__image.is-zoomed {
+.media-preview__image.is-zoomed,
+.media-preview__video.is-zoomed {
   transform: scale(1.06);
+}
+
+.media-preview__video {
+  pointer-events: none;
 }

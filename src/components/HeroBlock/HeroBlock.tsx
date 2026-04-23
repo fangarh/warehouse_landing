@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './HeroBlock.css';
 import { appConfig } from '../../app/config';
 import type { HeroContent } from '../../types/content';
@@ -80,6 +80,7 @@ export function HeroBlock({ content }: HeroBlockProps) {
           activeIndex={previewActiveIndex}
           className="hero-block__preview"
           items={previewItems}
+          preferStill={reducedMotion}
           priorityFirst
           transitionMs={content.media.transition?.durationMs}
           zoomActive={Boolean(content.media.transition?.enableZoom && canAnimateSequence && sequenceUnlocked)}

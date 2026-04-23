@@ -340,7 +340,8 @@
   }
 
   #premises .premises-block__heading h2 {
-    max-width: 12ch;
+    max-width: 44ch;
+    text-wrap: balance;
   }
 
   #premises .premises-block__heading p {
@@ -389,5 +390,11 @@
 
 
 
+
+
+
+.premises-block__workflow-card h3 {
+  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+}
 
 

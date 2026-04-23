@@ -27,7 +27,7 @@ export function createSiteSchema(content: SiteContent): Record<string, unknown>[
     '@type': 'SelfStorage',
     name: content.brandName,
     description: content.seo.description,
-    image: content.hero.media.items[0]?.src,
+    image: content.seo.ogImage,
     address: {
       '@type': 'PostalAddress',
       addressLocality: content.location.addressLabel,
@@ -41,7 +41,7 @@ export function createSiteSchema(content: SiteContent): Record<string, unknown>[
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Аренда складских помещений в Колпино',
+      name: 'Аренда складских помещений в промышленном парке «Софийский»',
       itemListElement: content.pricing.plans.map(createOfferSchema),
     },
   };

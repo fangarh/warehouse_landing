@@ -12,7 +12,7 @@ type BillingMode = 'monthly' | 'yearly';
 type PricingView = {
   prefix?: string;
   amountLabel: string;
-  periodLabel: string;
+  periodLabel?: string;
   compareLabel?: string;
   discountLabel?: string;
   savingsLabel?: string;
@@ -29,8 +29,7 @@ function getPricingView(
 ): PricingView {
   if (typeof pricing.amount !== 'number') {
     return {
-      amountLabel: 'Индивидуально',
-      periodLabel: billingMode === 'yearly' ? billing.yearlyLabel.toLowerCase() : billing.monthlyLabel.toLowerCase(),
+      amountLabel: 'По запросу',
     };
   }
 
@@ -64,6 +63,7 @@ function getPricingView(
 
 export function PricingBlock({ content }: PricingBlockProps) {
   const [billingMode, setBillingMode] = useState<BillingMode>('monthly');
+  const hasNumericPricing = content.plans.some((plan) => typeof plan.pricing.amount === 'number');
 
   const maxAnnualDiscount = content.plans.reduce(
     (maxDiscount, plan) => Math.max(maxDiscount, plan.pricing.annualDiscountPercent ?? 0),
@@ -75,41 +75,43 @@ export function PricingBlock({ content }: PricingBlockProps) {
       <div className="container">
         <div className="pricing-block__topbar">
           <div className="section-heading pricing-block__heading">
-            <span className="section-heading__eyebrow">Форматы аренды</span>
+            <span className="section-heading__eyebrow">Подберите формат аренды</span>
             <h2>{content.title}</h2>
             <p>{content.intro}</p>
           </div>
 
-          <div className="pricing-block__billing surface-panel" role="group" aria-label={content.billing.label}>
-            <p className="pricing-block__billing-label">{content.billing.label}</p>
-            <div className="pricing-block__billing-toggle">
-              <button
-                className={`pricing-block__billing-button${billingMode === 'monthly' ? ' is-active' : ''}`}
-                type="button"
-                onClick={() => setBillingMode('monthly')}
-                aria-pressed={billingMode === 'monthly'}
-              >
-                {content.billing.monthlyLabel}
-              </button>
-              <button
-                className={`pricing-block__billing-button${billingMode === 'yearly' ? ' is-active' : ''}`}
-                type="button"
-                onClick={() => setBillingMode('yearly')}
-                aria-pressed={billingMode === 'yearly'}
-              >
-                <span>{content.billing.yearlyLabel}</span>
-                {maxAnnualDiscount > 0 ? (
-                  <span className="pricing-block__billing-discount">-{maxAnnualDiscount}%</span>
-                ) : null}
-              </button>
+          {hasNumericPricing ? (
+            <div className="pricing-block__billing surface-panel" role="group" aria-label={content.billing.label}>
+              <p className="pricing-block__billing-label">{content.billing.label}</p>
+              <div className="pricing-block__billing-toggle">
+                <button
+                  className={`pricing-block__billing-button${billingMode === 'monthly' ? ' is-active' : ''}`}
+                  type="button"
+                  onClick={() => setBillingMode('monthly')}
+                  aria-pressed={billingMode === 'monthly'}
+                >
+                  {content.billing.monthlyLabel}
+                </button>
+                <button
+                  className={`pricing-block__billing-button${billingMode === 'yearly' ? ' is-active' : ''}`}
+                  type="button"
+                  onClick={() => setBillingMode('yearly')}
+                  aria-pressed={billingMode === 'yearly'}
+                >
+                  <span>{content.billing.yearlyLabel}</span>
+                  {maxAnnualDiscount > 0 ? (
+                    <span className="pricing-block__billing-discount">-{maxAnnualDiscount}%</span>
+                  ) : null}
+                </button>
+              </div>
+              <p className="pricing-block__billing-hint">
+                {billingMode === 'yearly' ? content.billing.yearlyHint : content.billing.monthlyHint}
+              </p>
             </div>
-            <p className="pricing-block__billing-hint">
-              {billingMode === 'yearly' ? content.billing.yearlyHint : content.billing.monthlyHint}
-            </p>
-          </div>
+          ) : null}
         </div>
 
-        <p className="mobile-swipe-hint">Свайпните, чтобы сравнить форматы аренды</p>
+        <p className="mobile-swipe-hint">Свайпните, чтобы сравнить форматы и выбрать подходящий объем</p>
 
         <div className="pricing-block__layout">
           {content.plans.map((plan) => {
@@ -135,7 +137,7 @@ export function PricingBlock({ content }: PricingBlockProps) {
                   </div>
 
                   <div className="pricing-block__price-meta">
-                    <span className="pricing-block__period">{pricingView.periodLabel}</span>
+                    {pricingView.periodLabel ? <span className="pricing-block__period">{pricingView.periodLabel}</span> : null}
                     {pricingView.compareLabel ? (
                       <span className="pricing-block__compare">{pricingView.compareLabel}</span>
                     ) : null}

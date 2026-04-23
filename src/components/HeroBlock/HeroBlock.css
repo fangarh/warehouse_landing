@@ -17,10 +17,14 @@
   height: 100%;
 }
 
+.hero-block__preview :is(.media-preview__image, .media-preview__video) {
+  filter: brightness(0.82) saturate(0.92);
+}
+
 .hero-block__veil {
   background:
-    linear-gradient(90deg, rgba(9, 18, 27, 0.88) 0%, rgba(13, 27, 39, 0.62) 44%, rgba(29, 58, 80, 0.22) 100%),
-    linear-gradient(180deg, rgba(30, 58, 79, 0.18) 0%, rgba(9, 18, 27, 0.52) 100%);
+    linear-gradient(98deg, rgba(7, 16, 24, 0.92) 0%, rgba(10, 21, 31, 0.72) 42%, rgba(18, 36, 49, 0.42) 100%),
+    linear-gradient(180deg, rgba(18, 41, 58, 0.14) 0%, rgba(8, 16, 24, 0.58) 100%);
 }
 
 .hero-block__inner {
@@ -250,5 +254,3 @@
     padding-bottom: 1rem;
   }
 }
-
-
